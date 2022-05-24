@@ -18,11 +18,12 @@ import ShoppingCartIcon from '../components/ShoppingCartIcon';
 import Description from '../components/Description';
 import Discount from '../components/Discount';
 
-import { navigateTo as navigateToActionCreator } from '../redux/cartItemsSlice';
+import { addItemToCart as addItemToCartActionCreator } from '../redux/cartItemsSlice';
 import { COLORS, icons, SIZES } from '../constants';
 import styles from '../constants/styling';
 import { authenticateProduct } from '../api/getProductAPI';
 import BASE_URL from '../shared/configs';
+import CheckBox from '@react-native-community/checkbox';
 
 const initialData = {
   productId: '4baa331e-9f43-473a-af9e-3839e9f2101e',
@@ -40,16 +41,16 @@ const initialData = {
   dateCode: '3121',
 };
 
-export default function CustomerReq({ navigation, route }) {
+export default function RelatedFactor({ navigation, route }) {
   const dispatch = useDispatch();
   const userAuthToken = useSelector(state => state.auth.token);
 
-  const [ChooseSym, setRowMaterial] = useState(initialData);
+  const [RelatedFactor, setRowMaterial] = useState(initialData);
 
   // const { nfcData } = route.params;
 
-  const navigateTo = () => {
-    navigation.navigate('ChooseSym');
+  const addItemToCart = () => {
+    navigation.navigate('CustomerReq');
   };
 
   useEffect(() => {
@@ -105,74 +106,100 @@ export default function CustomerReq({ navigation, route }) {
           }}
         />
       </TouchableOpacity>
-      <Text style={styles.headerText}>Row Material</Text>
-      <ShoppingCartIcon />
+      <Text style={styles.headerText}>Select Related Factor</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <Image
+          // source={icons.close}
+          resizeMode="contain"
+          style={{
+            tintColor: COLORS.primary,
+            width: 25,
+            height: 25,
+          }}
+        />
+      </TouchableOpacity>
     </View>
   );
-  const data2 = [
+  const data = [
     {
-      name: 'Living Room',
-      color: '#141414',
+      name: 'Dry',
     },
     {
-      name: 'Bed Room',
-      color: '#ff0000',
+      name: 'New or recent',
     },
     {
-      name: 'Kitchen',
-      color: '#00ff00',
+      name: 'Ullamco do esse incididunt',
     },
     {
-      name: 'Bathroom',
-      color: '#0000ff',
+      name: 'Deserunt irure',
+    },
+    {
+      name: 'Et anim occaecat veniam ullamco consequat duis.',
+    },
+    {
+      name: 'Ut eu velit non ipsum veniam cupidatat commodo.',
+    },
+    {
+      name: 'New or recent',
+    },
+    {
+      name: 'Ullamco do esse incididunt',
+    },
+    {
+      name: 'Deserunt irure',
+    },
+    {
+      name: 'Enim non duis',
     },
   ];
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         {header}
-        <View style={styles.centerFlex}>
-          <View style={styles.rowFlex2}>
-            <ItemDetais msg={'Name'} />
-            <ItemDetais msg={'Color'} />
-          </View>
-          {data2
-            ? data2.map((item, index) => {
+        <View>
+          <Text
+            style={{
+              color: COLORS.primary,
+              fontSize: 35,
+              fontWeight: 'bold',
+              marginLeft: 30,
+            }}>
+            Cough pain in adults
+          </Text>
+          {data
+            ? data.map((item, index) => {
                 return (
-                  <View style={styles.rowFlex2} key={index}>
-                    <ItemDetais msg={item.name} />
-                    <ItemDetais msg={item.color} />
+                  <View style={styles.rowFlex21} key={index}>
+                    <CheckBox
+                      style={{ marginLeft: 30, marginTop: 10 }}
+                      disabled={false}
+                      value={false}
+                      onValueChange={newValue => console.log(newValue)}
+                    />
+                    <Text
+                      style={{
+                        color: COLORS.third,
+                        fontSize: 25,
+                        fontWeight: 'bold',
+                        marginLeft: 30,
+                        marginTop: 10,
+                      }}>
+                      {item.name}
+                    </Text>
                   </View>
                 );
               })
             : null}
         </View>
-        <View style={{ marginTop: 10 }}>
-          <Text style={styles.headerText}>Full Cost : $1290</Text>
-          <View style={styles.centerFlex}>
-            <Button text="Estimate Raw Material" onPress={() => navigateTo()} />
-          </View>
-        </View>
-        <View style={{ marginTop: 20 }}>
-          <Text style={styles.headerText}>Selected 3D Model</Text>
-          <View style={styles.centerFlex}>
-            <Image
-              source={{ uri: 'https://picsum.photos/200/300' }}
-              style={{
-                marginTop: 10,
-                width: SIZES.width * 0.4,
-                height: SIZES.width * 0.36,
-              }}
-            />
-            <View style={styles.rowFlex2}>
-              <ItemDetais
-                style={{ marginTop: 10 }}
-                msg={'Calculate Over all Row Material'}
-              />
-              <Button text="Press Here" />
-            </View>
-          </View>
-        </View>
+
+        <TouchableOpacity
+          style={styles.buttonStyleCovi}
+          activeOpacity={0.5}
+          // onPress={() => navigation.navigate('causes')}
+        >
+          <Text style={styles.buttonTextStyle}>Find Causes</Text>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );

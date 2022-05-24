@@ -2,21 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import {
   Image,
-  Platform,
   SafeAreaView,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
-  FlatList,
 } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
-import { FlatGrid } from 'react-native-super-grid';
-import Button from '../components/Button';
-import ShoppingCartIcon from '../components/ShoppingCartIcon';
-import Description from '../components/Description';
-import Discount from '../components/Discount';
 
 import { addItemToCart as addItemToCartActionCreator } from '../redux/cartItemsSlice';
 import { COLORS, icons, SIZES } from '../constants';
@@ -38,11 +31,11 @@ const initialData = {
   dateCode: '3121',
 };
 
-export default function RowMaterial({ navigation, route }) {
+export default function ChooseSym({ navigation, route }) {
   const dispatch = useDispatch();
   const userAuthToken = useSelector(state => state.auth.token);
 
-  const [RowMaterial, setRowMaterial] = useState(initialData);
+  const [ChooseSym, setRowMaterial] = useState(initialData);
   const [items, setItems] = React.useState([
     { name: 'TURQUOISE', code: '#1abc9c' },
     { name: 'EMERALD', code: '#2ecc71' },
@@ -91,7 +84,7 @@ export default function RowMaterial({ navigation, route }) {
   ];
   const header = (
     <View style={styles.rowFlexScanResHed}>
-      <Text style={styles.headerText}>3D House</Text>
+      <Text style={styles.headerText}>PeoPulz</Text>
     </View>
   );
 
@@ -100,22 +93,19 @@ export default function RowMaterial({ navigation, route }) {
       <ScrollView>
         {header}
         <View style={styles.centerFlex}>
-          {RowMaterial.image && (
+          {ChooseSym.image && (
             <View
               style={{
                 marginLeft: 10,
               }}>
               <Image
                 source={{
-                  uri: 'https://picsum.photos/200/300',
-                  headers: {
-                    Authorization: `Bearer ${userAuthToken}`,
-                  },
+                  uri: 'https://www.sharp.com/health-news/images/Top-5-Symptoms-of-COVID-19-HN2387-iStock-1217199413-Sized.png',
                 }}
-                resizeMode="cover"
+                resizeMode="contain"
                 style={{
-                  height: SIZES.height * 0.5,
                   width: SIZES.width * 0.8,
+                  height: SIZES.height * 0.3,
                   marginLeft: SIZES.width * 0.05,
                   marginRight: SIZES.width * 0.05,
                 }}
@@ -124,7 +114,7 @@ export default function RowMaterial({ navigation, route }) {
           )}
         </View>
         <View style={styles.rowFlexScanRes}>
-          <Text style={styles.itemTextStyle}>
+          <Text style={[styles.itemTextStyle, { textAlign: 'center' }]}>
             Ea quis deserunt incididunt sit tempor q uis. Ea quis deserunt
             incididunt sit tempor q uis.
           </Text>
@@ -132,13 +122,23 @@ export default function RowMaterial({ navigation, route }) {
 
         <View style={styles.centerFlex}>
           <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5}>
-            <Text style={styles.buttonTextStyle}>View Contacts</Text>
+            <Text
+              style={styles.buttonTextStyle}
+              onPress={() => navigation.navigate('ChooseSym')}>
+              Choose a symptom
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonStyle}
             activeOpacity={0.5}
-            onPress={() => navigation.navigate('RowMaterial')}>
-            <Text style={styles.buttonTextStyle}>View Row Material</Text>
+            onPress={() => navigation.navigate('RelatedFactor')}>
+            <Text style={styles.buttonTextStyle}>Select related factors</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.buttonStyle}
+            activeOpacity={0.5}
+            onPress={() => navigation.navigate('PossibleCauses')}>
+            <Text style={styles.buttonTextStyle}>View posable causes</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

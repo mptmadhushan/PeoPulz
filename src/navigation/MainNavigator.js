@@ -6,10 +6,10 @@ import LoginScreen from '../screens/LogIn';
 import Register from '../screens/Register';
 import OnBoarding from '../screens/OnBoarding';
 import BottomNavigator from './BottomNavigation/BottomNavigator';
-import RowMaterial from '../screens/RowMaterial';
+import ChooseSym from '../screens/ChooseSym';
 import CustomerReq from '../screens/CustomerReq';
 import Estimate from '../screens/Estimate';
-import Location from '../screens/Location';
+import Symptoms from '../screens/Symptoms';
 import ItemDetails from '../screens/ItemDetails';
 import ContactUs from '../screens/ContactUs';
 import ScanFail from '../screens/ScanFail';
@@ -17,6 +17,8 @@ import MyItems from '../screens/MyItems';
 import MyDetails from '../screens/MyDetails';
 import Contact from '../screens/Contact';
 import GlobalCovid from '../screens/GlobalCovid';
+import RelatedFactor from '../screens/RelatedFactor';
+import PossibleCauses from '../screens/PossibleCauses';
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 
 export const ScreenNames = {
@@ -30,13 +32,15 @@ export const ScreenNames = {
   MyItems: 'MyItems',
   MyDetails: 'MyDetails',
   ItemDetails: 'ItemDetails',
+  RelatedFactor: 'RelatedFactor',
   ContactUs: 'ContactUs',
   ScanFail: 'ScanFail',
-  RowMaterial: 'RowMaterial',
+  ChooseSym: 'ChooseSym',
   CustomerReq: 'CustomerReq',
   Items: 'Items',
-  Location: 'Location',
+  Symptoms: 'Symptoms',
   Profile: 'Profile',
+  PossibleCauses: 'PossibleCauses',
 };
 
 export const { Navigator, Screen } = createStackNavigator();
@@ -63,6 +67,11 @@ export default function MainStackNavigator() {
       <Screen
         name={ScreenNames.OnBoarding}
         component={OnBoarding}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name={ScreenNames.RelatedFactor}
+        component={RelatedFactor}
         options={{ headerShown: false }}
       />
       <Screen
@@ -101,8 +110,8 @@ export default function MainStackNavigator() {
         options={{ headerShown: false }}
       />
       <Screen
-        name={ScreenNames.RowMaterial}
-        component={RowMaterial}
+        name={ScreenNames.ChooseSym}
+        component={ChooseSym}
         options={{
           headerShown: false,
         }}
@@ -115,6 +124,13 @@ export default function MainStackNavigator() {
         }}
       />
       <Screen
+        name={ScreenNames.PossibleCauses}
+        component={PossibleCauses}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
         name={ScreenNames.CustomerReq}
         component={CustomerReq}
         options={{
@@ -122,8 +138,8 @@ export default function MainStackNavigator() {
         }}
       />
       <Screen
-        name={ScreenNames.Location}
-        component={Location}
+        name={ScreenNames.Symptoms}
+        component={Symptoms}
         options={{
           headerShown: false,
         }}

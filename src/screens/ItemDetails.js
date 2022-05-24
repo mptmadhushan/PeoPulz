@@ -33,7 +33,7 @@ import BASE_URL from '../shared/configs';
 //   dateCode: '3121',
 // };
 
-export default function RowMaterial({ route, navigation }) {
+export default function ChooseSym({ route, navigation }) {
   const userAuthToken = useSelector(state => state.auth.token);
   const data = route.params.item;
 

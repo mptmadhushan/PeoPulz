@@ -40,11 +40,11 @@ const initialData = {
   dateCode: '3121',
 };
 
-export default function RowMaterial({ navigation, route }) {
+export default function ChooseSym({ navigation, route }) {
   const dispatch = useDispatch();
   const userAuthToken = useSelector(state => state.auth.token);
 
-  const [RowMaterial, setRowMaterial] = useState(initialData);
+  const [ChooseSym, setRowMaterial] = useState(initialData);
 
   // const { nfcData } = route.params;
 
@@ -105,50 +105,38 @@ export default function RowMaterial({ navigation, route }) {
           }}
         />
       </TouchableOpacity>
-      <Text style={styles.headerText}>Row Material</Text>
-      <ShoppingCartIcon />
+      <Text style={styles.headerText}>Choose a symptoms</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <Image
+          // source={icons.close}
+          resizeMode="contain"
+          style={{
+            tintColor: COLORS.primary,
+            width: 25,
+            height: 25,
+          }}
+        />
+      </TouchableOpacity>
     </View>
   );
   const data = [
     {
-      name: 'Cement',
-      cost: '$10',
-      quantity: '21',
+      name: 'Chest pain in adults',
     },
     {
-      name: 'Brick',
-      cost: '$13',
-      quantity: '15',
+      name: 'Cough pain in adults',
     },
     {
-      name: 'Sand',
-      cost: '$20',
-      quantity: '14',
+      name: 'Chest pain in adults',
     },
     {
-      name: 'Stone',
-      cost: '$10',
-      quantity: '1',
+      name: 'Cough pain in adults',
     },
     {
-      name: 'Cement',
-      cost: '$10',
-      quantity: '12',
+      name: 'Chest pain in adults',
     },
     {
-      name: 'Brick',
-      cost: '$13',
-      quantity: '10',
-    },
-    {
-      name: 'Sand',
-      cost: '$20',
-      quantity: '2',
-    },
-    {
-      name: 'Stone',
-      cost: '$10',
-      quantity: '1',
+      name: 'Cough pain in adults',
     },
   ];
 
@@ -156,32 +144,65 @@ export default function RowMaterial({ navigation, route }) {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         {header}
-        <View style={styles.centerFlex}>
-          <View style={styles.rowFlex2}>
-            <ItemDetais msg={'Category'} />
-            <ItemDetais msg={'Cost'} />
-            <ItemDetais msg={'Quantity'} />
-          </View>
+        <View>
+          <Text
+            style={{
+              color: COLORS.primary,
+              fontSize: 35,
+              fontWeight: 'bold',
+              marginLeft: 30,
+            }}>
+            Adults symptoms
+          </Text>
           {data
             ? data.map((item, index) => {
                 return (
                   <View style={styles.rowFlex2} key={index}>
-                    <ItemDetais msg={item.name} />
-                    <ItemDetais msg={item.cost} />
-                    <ItemDetais msg={item.quantity} />
+                    <Text
+                      style={{
+                        color: COLORS.third,
+                        fontSize: 25,
+                        fontWeight: 'bold',
+                        marginLeft: 30,
+                        marginTop: 10,
+                      }}>
+                      {item.name}
+                    </Text>
                   </View>
                 );
               })
             : null}
         </View>
-        <View style={{ marginTop: 100 }}>
-          <Text style={styles.headerText}>Full Cost : $1290</Text>
-          <View style={styles.centerFlex}>
-            <Button
-              text="Customer Requirement"
-              onPress={() => addItemToCart()}
-            />
-          </View>
+        <View>
+          <Text
+            style={{
+              color: COLORS.primary,
+              fontSize: 35,
+              fontWeight: 'bold',
+              marginLeft: 30,
+            }}>
+            Child symptoms
+          </Text>
+          {data
+            ? data.map((item, index) => {
+                return (
+                  <View style={styles.rowFlex2} key={index}>
+                    <TouchableOpacity>
+                      <Text
+                        style={{
+                          color: COLORS.third,
+                          fontSize: 25,
+                          fontWeight: 'bold',
+                          marginLeft: 30,
+                          marginTop: 10,
+                        }}>
+                        {item.name}
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                );
+              })
+            : null}
         </View>
       </ScrollView>
     </SafeAreaView>

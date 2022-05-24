@@ -12,7 +12,7 @@ import { useSelector } from 'react-redux';
 import Home from '../../screens/Home';
 import GlobalCovid from '../../screens/GlobalCovid';
 import Profile from '../../screens/Profile';
-import Location from '../../screens/Location';
+import Symptoms from '../../screens/Symptoms';
 import Estimate from '../../screens/Estimate';
 
 import { COLORS, icons } from '../../constants';
@@ -78,16 +78,16 @@ const Tabs = () => {
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
       /> */}
-      {/* <Screen
-        name={ScreenNames.Location}
-        component={Location}
+      <Screen
+        name={ScreenNames.Symptoms}
+        component={Symptoms}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} iconSource={icons.help} />
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
-      /> */}
+      />
       {/* <Screen
         name={ScreenNames.Estimate}
         component={Estimate}
