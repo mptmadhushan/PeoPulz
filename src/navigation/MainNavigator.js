@@ -19,6 +19,7 @@ import Contact from '../screens/Contact';
 import GlobalCovid from '../screens/GlobalCovid';
 import RelatedFactor from '../screens/RelatedFactor';
 import PossibleCauses from '../screens/PossibleCauses';
+import MedicalReport from '../screens/MedicalReport';
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 
 export const ScreenNames = {
@@ -39,6 +40,7 @@ export const ScreenNames = {
   CustomerReq: 'CustomerReq',
   Items: 'Items',
   Symptoms: 'Symptoms',
+  MedicalReport: 'MedicalReport',
   Profile: 'Profile',
   PossibleCauses: 'PossibleCauses',
 };
@@ -133,6 +135,13 @@ export default function MainStackNavigator() {
       <Screen
         name={ScreenNames.CustomerReq}
         component={CustomerReq}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name={ScreenNames.MedicalReport}
+        component={MedicalReport}
         options={{
           headerShown: false,
         }}

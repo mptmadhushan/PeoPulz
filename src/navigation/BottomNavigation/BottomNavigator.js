@@ -13,6 +13,7 @@ import Home from '../../screens/Home';
 import GlobalCovid from '../../screens/GlobalCovid';
 import Profile from '../../screens/Profile';
 import Symptoms from '../../screens/Symptoms';
+import MedicalReport from '../../screens/MedicalReport';
 import Estimate from '../../screens/Estimate';
 
 import { COLORS, icons } from '../../constants';
@@ -81,6 +82,16 @@ const Tabs = () => {
       <Screen
         name={ScreenNames.Symptoms}
         component={Symptoms}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabBarIcon focused={focused} iconSource={icons.help} />
+          ),
+          tabBarButton: props => <TabBarCustomButton {...props} />,
+        }}
+      />
+      <Screen
+        name={ScreenNames.MedicalReport}
+        component={MedicalReport}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} iconSource={icons.help} />
