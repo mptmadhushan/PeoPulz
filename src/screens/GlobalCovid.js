@@ -67,7 +67,7 @@ function GlobalCovid({ navigation }) {
       <View style={styles.rowFlex1}>
         <Text style={styles.headerText}>Global Covid Update</Text>
       </View>
-      <View>
+      <View style={{ marginLeft: 80 }}>
         <View style={styles.rowFlex2}>
           <ItemDetais msg={'Country'} />
           <ItemDetais msg={'New'} />

@@ -12,7 +12,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { CheckBox } from 'react-native-elements';
 import { useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
 import { COLORS, icons, images, SIZES } from '../constants';
@@ -21,6 +20,8 @@ import { login } from '../api/authAPI';
 import { authSuccess } from '../redux/authSlice';
 import { storeUserToken, getUserToken } from '../shared/asyncStorage';
 import ItemDetais from '../components/NoItemsMessage';
+import CheckBox from '@react-native-community/checkbox';
+// import styles from '../constants/styling';
 
 const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -101,7 +102,9 @@ const LoginScreen = ({ navigation }) => {
 
         <View style={styles.SectionStyle}>
           <TextInput
-            style={[styles.inputStyle]}
+            style={
+              ([styles.inputStyle], { border: 3, borderColor: COLORS.primary })
+            }
             onChangeText={UserEmail => setUserEmail(UserEmail)}
             placeholder="Type here"
             placeholderTextColor={COLORS.third}
@@ -119,51 +122,27 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.rowFlex}>
         <ItemDetais msg={'Did you get positive covid-19 '} />
         <CheckBox
-          title={'YES'}
-          checked={false}
-          checkedIcon={
-            <Image
-              source={icons.user}
-              style={{
-                width: 5,
-                height: 5,
-              }}
-            />
-          }
+          disabled={false}
+          value={false}
+          onValueChange={newValue => console.log(newValue)}
         />
         <CheckBox title={'NO'} checked={false} />
       </View>
       <View style={styles.rowFlex}>
         <ItemDetais msg={'Vaccine'} />
         <CheckBox
-          title={'YES'}
-          checked={false}
-          checkedIcon={
-            <Image
-              source={icons.user}
-              style={{
-                width: 5,
-                height: 5,
-              }}
-            />
-          }
+          disabled={false}
+          value={false}
+          onValueChange={newValue => console.log(newValue)}
         />
         <CheckBox title={'NO'} checked={false} />
       </View>
       <View style={styles.rowFlex}>
         <ItemDetais msg={'Lung issues'} />
         <CheckBox
-          title={'YES'}
-          checked={false}
-          checkedIcon={
-            <Image
-              source={icons.user}
-              style={{
-                width: 5,
-                height: 5,
-              }}
-            />
-          }
+          disabled={false}
+          value={false}
+          onValueChange={newValue => console.log(newValue)}
         />
         <CheckBox title={'NO'} checked={false} />
       </View>
@@ -215,7 +194,7 @@ const LoginScreen = ({ navigation }) => {
                 transform: [{ scale: animationLogoScale }],
               }}>
               <Image
-                source={{ uri: 'https://picsum.photos/200/300' }}
+                source={images.logo}
                 style={{
                   width: SIZES.width * 0.9,
                   height: SIZES.width * 0.46,
@@ -225,10 +204,9 @@ const LoginScreen = ({ navigation }) => {
                 style={{
                   color: COLORS.thrid,
                   fontSize: 10,
-                  marginLeft: 30,
-                  marginTop: 10,
+                  textAlign: 'center',
                 }}>
-                Ex amet sint eu do consectetur incididunt exercitation officia.
+                Ex amet sint eu do unt exercitation officia.
               </Text>
             </Animated.View>
           </Animated.View>
@@ -255,13 +233,13 @@ const styles = StyleSheet.create({
   rowFlex: {
     flexDirection: 'row',
     // flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginLeft: SIZES.width * 0.1,
     alignContent: 'center',
   },
   mainBody: {
-    backgroundColor: '#FAFAFA',
+    backgroundColor: COLORS.primary,
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
@@ -272,7 +250,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.secondary,
     borderWidth: 0,
     color: COLORS.white,
     height: 50,

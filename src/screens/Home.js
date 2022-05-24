@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   buttonStyle: {
-    backgroundColor: COLORS.black,
+    backgroundColor:  COLORS.secondary,
     borderWidth: 0,
     color: COLORS.white,
     height: 50,

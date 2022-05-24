@@ -12,13 +12,13 @@ import {
 } from 'react-native';
 import Toast from 'react-native-simple-toast';
 import { useSelector } from 'react-redux';
-import ItemDetais from '../components/NoItemsMessage';
+import { ItemDetais, DoneModal } from '../components/NoItemsMessage';
 
 import { images, SIZES, COLORS } from '../constants';
 import { getOffers } from '../api/offersAPI';
 import SelectDropdown from 'react-native-select-dropdown';
 const dropData = ['data1', 'data2', 'data3', 'data4'];
-export default function Home({ navigation }) {
+export default function Diabetes({ navigation }) {
   const [offers, setOffers] = useState([]);
   const userAuthToken = useSelector(state => state.auth.token);
 
@@ -54,8 +54,8 @@ export default function Home({ navigation }) {
       <TouchableOpacity
         style={styles.buttonStyle}
         activeOpacity={0.5}
-        onPress={() => navigation.navigate('Register')}>
-        <Text style={styles.buttonTextStyle}>Estimate Time and Total Cost</Text>
+        onPress={() => navigation.navigate('ScanFail')}>
+        <Text style={styles.buttonTextStyle}>Check Results</Text>
       </TouchableOpacity>
     </View>
   );
@@ -69,16 +69,21 @@ export default function Home({ navigation }) {
       </TouchableOpacity>
     </View>
   );
+  const checkOut = () => {
+    var result = 'jn';
+
+    // checkoutOrder(result);
+  };
   return (
     <ScrollView style={styles.container}>
       <View style={styles.centerFlex}>
-        <Text style={styles.buttonTextStyleReg}>
-          Estimate Time and Total Cost
-        </Text>
+        <Text style={styles.buttonTextStyleReg}>Check Results</Text>
       </View>
       <View style={styles.centerFlex}>
         <Image
-          source={{ uri: 'https://picsum.photos/200/300' }}
+          source={{
+            uri: 'https://thumbs.dreamstime.com/b/medicine-doctor-touching-electronic-medical-record-tablet-dna-digital-healthcare-network-connection-hologram-modern-virtual-154742526.jpg',
+          }}
           style={{
             marginTop: 10,
             width: SIZES.width * 0.8,
@@ -86,7 +91,7 @@ export default function Home({ navigation }) {
           }}
         />
         <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Row Material Total cost</Text>
+          <Text style={styles.TextStyleRg}>Name</Text>
           <TextInput
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
@@ -99,7 +104,7 @@ export default function Home({ navigation }) {
           />
         </View>
         <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Total Worker Cost</Text>
+          <Text style={styles.TextStyleRg}>Age</Text>
           <TextInput
             style={[styles.inputStyle]}
             // onChangeText={UserPassword => setUserPassword(UserPassword)}
@@ -112,7 +117,7 @@ export default function Home({ navigation }) {
           />
         </View>
         <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Estimate Total Cost</Text>
+          <Text style={styles.TextStyleRg}>Height</Text>
 
           <TextInput
             style={[styles.inputStyle]}
@@ -126,7 +131,7 @@ export default function Home({ navigation }) {
           />
         </View>
         <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Estimate Date</Text>
+          <Text style={styles.TextStyleRg}>Weight</Text>
 
           <TextInput
             style={[styles.inputStyle]}
@@ -141,26 +146,14 @@ export default function Home({ navigation }) {
         </View>
 
         <View style={styles.centerFlex}>
-          <Text style={styles.buttonTextStyleReg}>Worker Price</Text>
-        </View>
-        <View style={styles.rowFlex2}>
-          <ItemDetais />
-          <ItemDetais msg={'Price'} />
-          <ItemDetais msg={'Details'} />
+          <Text style={styles.buttonTextStyleReg}>Blood Accurate Level</Text>
         </View>
         <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Engineer Details</Text>
+          <Text style={styles.TextStyleRg}>Blood</Text>
+
           <TextInput
-            style={[styles.inputStyle2]}
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-          <TextInput
-            style={[styles.inputStyle2]}
+            style={[styles.inputStyle]}
+            // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholderTextColor={COLORS.third}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
@@ -170,72 +163,11 @@ export default function Home({ navigation }) {
           />
         </View>
         <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Architecture Details</Text>
+          <Text style={styles.TextStyleRg}>Blood</Text>
+
           <TextInput
-            style={[styles.inputStyle2]}
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-          <TextInput
-            style={[styles.inputStyle2]}
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-        </View>
-        <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Construction Details</Text>
-          <TextInput
-            style={[styles.inputStyle2]}
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-          <TextInput
-            style={[styles.inputStyle2]}
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-        </View>
-        <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Carpenter Details</Text>
-          <TextInput
-            style={[styles.inputStyle2]}
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-          <TextInput
-            style={[styles.inputStyle2]}
-            placeholderTextColor={COLORS.third}
-            keyboardType="default"
-            onSubmitEditing={Keyboard.dismiss}
-            blurOnSubmit={false}
-            secureTextEntry={true}
-            returnKeyType="next"
-          />
-        </View>
-        <View style={styles.rowFlex}>
-          <Text style={styles.TextStyleRg}>Total Worker Cost</Text>
-          <TextInput
-            style={[styles.inputStyle2]}
+            style={[styles.inputStyle]}
+            // onChangeText={UserPassword => setUserPassword(UserPassword)}
             placeholderTextColor={COLORS.third}
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
@@ -245,7 +177,6 @@ export default function Home({ navigation }) {
           />
         </View>
         {ButtonSub}
-        {ButtonSub2}
         <View style={{ height: 100 }}></View>
       </View>
     </ScrollView>
@@ -317,7 +248,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   buttonStyle: {
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.secondary,
     borderWidth: 0,
     color: COLORS.white,
     height: 50,

@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
 
 import { addItemToCart as addItemToCartActionCreator } from '../redux/cartItemsSlice';
-import { COLORS, icons, SIZES } from '../constants';
+import { COLORS, icons, images, SIZES } from '../constants';
 import styles from '../constants/styling';
 
 const initialData = {
@@ -84,7 +84,14 @@ export default function ChooseSym({ navigation, route }) {
   ];
   const header = (
     <View style={styles.rowFlexScanResHed}>
-      <Text style={styles.headerText}>PeoPulz</Text>
+      <Image
+        source={images.logo}
+        style={{
+          width: 90,
+          height: 50,
+        }}
+      />
+      {/* <Text style={styles.headerText}>PeoPulz</Text> */}
     </View>
   );
 

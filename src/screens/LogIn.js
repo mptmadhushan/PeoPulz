@@ -99,6 +99,7 @@ const LoginScreen = ({ navigation }) => {
         source={icons.user}
         resizeMode="contain"
         style={{
+          tintColor: COLORS.white,
           width: 20,
           height: 20,
         }}
@@ -108,7 +109,7 @@ const LoginScreen = ({ navigation }) => {
           style={[styles.inputStyle]}
           onChangeText={UserEmail => setUserEmail(UserEmail)}
           placeholder="Username"
-          placeholderTextColor={COLORS.third}
+          placeholderTextColor={COLORS.white}
           autoCapitalize="none"
           keyboardType="email-address"
           returnKeyType="next"
@@ -127,6 +128,7 @@ const LoginScreen = ({ navigation }) => {
         source={icons.lock}
         resizeMode="contain"
         style={{
+          tintColor: COLORS.white,
           width: 20,
           height: 20,
         }}
@@ -136,7 +138,7 @@ const LoginScreen = ({ navigation }) => {
           style={[styles.inputStyle]}
           onChangeText={UserPassword => setUserPassword(UserPassword)}
           placeholder="Password" //12345
-          placeholderTextColor={COLORS.third}
+          placeholderTextColor={COLORS.white}
           keyboardType="default"
           ref={passwordInputRef}
           onSubmitEditing={Keyboard.dismiss}
@@ -193,7 +195,7 @@ const LoginScreen = ({ navigation }) => {
                 transform: [{ scale: animationLogoScale }],
               }}>
               <Image
-                source={images.silicaLogo}
+                source={images.logo}
                 resizeMode="contain"
                 style={{
                   width: SIZES.width * 0.56,
@@ -233,7 +235,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   mainBody: {
-    backgroundColor: '#FAFAFA',
+    backgroundColor: COLORS.primary,
     flex: 1,
     justifyContent: 'center',
     alignContent: 'center',
@@ -244,7 +246,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.third,
     borderWidth: 0,
     color: COLORS.white,
     height: 50,
@@ -263,7 +265,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   buttonTextStyleReg: {
-    color: COLORS.third,
+    color: COLORS.white,
     // paddingVertical: 7,
     fontSize: 15,
     fontWeight: 'bold',

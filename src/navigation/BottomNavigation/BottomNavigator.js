@@ -14,7 +14,7 @@ import GlobalCovid from '../../screens/GlobalCovid';
 import Profile from '../../screens/Profile';
 import Symptoms from '../../screens/Symptoms';
 import MedicalReport from '../../screens/MedicalReport';
-import Estimate from '../../screens/Estimate';
+import Diabetes from '../../screens/Diabetes';
 
 import { COLORS, icons } from '../../constants';
 import { ScreenNames } from '../MainNavigator';
@@ -100,8 +100,8 @@ const Tabs = () => {
         }}
       />
       {/* <Screen
-        name={ScreenNames.Estimate}
-        component={Estimate}
+        name={ScreenNames.Diabetes}
+        component={Diabetes}
         options={{
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} iconSource={icons.help} />

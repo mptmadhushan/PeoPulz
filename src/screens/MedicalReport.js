@@ -12,7 +12,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
 
 import { addItemToCart as addItemToCartActionCreator } from '../redux/cartItemsSlice';
-import { COLORS, icons, SIZES } from '../constants';
+import { COLORS, images, icons, SIZES } from '../constants';
 import styles from '../constants/styling';
 
 const initialData = {
@@ -84,7 +84,13 @@ export default function MedicalReport({ navigation, route }) {
   ];
   const header = (
     <View style={styles.rowFlexScanResHed}>
-      <Text style={styles.headerText}>PeoPulz</Text>
+      <Image
+        source={images.logo}
+        style={{
+          width: 90,
+          height: 50,
+        }}
+      />
     </View>
   );
 
@@ -124,23 +130,20 @@ export default function MedicalReport({ navigation, route }) {
           <TouchableOpacity style={styles.buttonStyle} activeOpacity={0.5}>
             <Text
               style={styles.buttonTextStyle}
-              // onPress={() => navigation.navigate('Diabetes')}
-            >
+              onPress={() => navigation.navigate('Diabetes')}>
               Diabetes
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonStyle}
             activeOpacity={0.5}
-            // onPress={() => navigation.navigate('Hight Blood Pressure')}
-          >
+            onPress={() => navigation.navigate('Diabetes')}>
             <Text style={styles.buttonTextStyle}>Hight Blood Pressure</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonStyle}
             activeOpacity={0.5}
-            // onPress={() => navigation.navigate('Cholesterol')}
-          >
+            onPress={() => navigation.navigate('Diabetes')}>
             <Text style={styles.buttonTextStyle}>Cholesterol</Text>
           </TouchableOpacity>
         </View>

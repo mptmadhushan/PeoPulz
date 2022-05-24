@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
   emptyCartMessage: {
     color: COLORS.third,
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: 'left',
+    width: SIZES.width * 0.5,
     margin: 10,
     // marginTop: -SIZES.height * 0.1,
   },
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   buttonStyle: {
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.secondary,
     color: COLORS.white,
     height: 55,
     width: SIZES.width * 0.6,
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   buttonStyleCovi: {
-    backgroundColor: COLORS.black,
+    backgroundColor: COLORS.third,
     color: COLORS.white,
     height: 55,
     alignItems: 'center',
@@ -232,6 +233,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   rowFlexScanResHed: {
+    backgroundColor: COLORS.primary,
     height: 60,
     flexDirection: 'row',
     justifyContent: 'space-around',

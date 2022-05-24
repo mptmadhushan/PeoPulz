@@ -8,7 +8,7 @@ import OnBoarding from '../screens/OnBoarding';
 import BottomNavigator from './BottomNavigation/BottomNavigator';
 import ChooseSym from '../screens/ChooseSym';
 import CustomerReq from '../screens/CustomerReq';
-import Estimate from '../screens/Estimate';
+import Diabetes from '../screens/Diabetes';
 import Symptoms from '../screens/Symptoms';
 import ItemDetails from '../screens/ItemDetails';
 import ContactUs from '../screens/ContactUs';
@@ -30,6 +30,7 @@ export const ScreenNames = {
   OnBoarding: 'OnBoarding',
   Register: 'Register',
   Home: 'Home',
+  Diabetes: 'Diabetes',
   MyItems: 'MyItems',
   MyDetails: 'MyDetails',
   ItemDetails: 'ItemDetails',
@@ -52,7 +53,7 @@ export default function MainStackNavigator() {
 
   return (
     <Navigator
-      initialRouteName={'Home'}
+      initialRouteName={'Estimate'}
       screenOptions={{
         headerShown: false,
       }}>
@@ -64,6 +65,11 @@ export default function MainStackNavigator() {
       <Screen
         name={ScreenNames.Home}
         component={BottomNavigator}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name={ScreenNames.Diabetes}
+        component={Diabetes}
         options={{ headerShown: false }}
       />
       <Screen
@@ -141,7 +147,7 @@ export default function MainStackNavigator() {
       />
       <Screen
         name={ScreenNames.MedicalReport}
-        component={MedicalReport}
+        component={CustomerReq}
         options={{
           headerShown: false,
         }}

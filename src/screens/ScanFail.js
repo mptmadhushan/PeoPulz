@@ -2,8 +2,9 @@ import React from 'react';
 import { View, TouchableOpacity, Image, StyleSheet, Text } from 'react-native';
 
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
+import styles1 from '../constants/styling';
 
-import { icons, SIZES, COLORS } from '../constants';
+import { icons, SIZES, images, COLORS } from '../constants';
 export default function ChooseSym({ navigation }) {
   const header = (
     <View style={styles.rowFlex1}>
@@ -12,14 +13,20 @@ export default function ChooseSym({ navigation }) {
           source={icons.close}
           resizeMode="contain"
           style={{
-            tintColor: COLORS.primary,
+            tintColor: COLORS.white,
             width: 25,
             height: 25,
           }}
         />
       </TouchableOpacity>
       <Text style={styles.headerText}>Scan Result</Text>
-      <ShoppingCartIcon />
+      <Image
+        source={images.logo}
+        style={{
+          width: 90,
+          height: 50,
+        }}
+      />
     </View>
   );
   return (
@@ -45,7 +52,7 @@ export default function ChooseSym({ navigation }) {
             textAlign: 'center',
             marginTop: 10,
           }}>
-          This is a counterfeit product
+          Warning
         </Text>
         <Text
           style={{
@@ -54,9 +61,21 @@ export default function ChooseSym({ navigation }) {
             fontSize: 16,
             textAlign: 'center',
           }}>
-          If you are in a store, please seek assistance from a sales manager or
-          contact us for further assistance
+          Voluptate amet ad exercitation eu sit dolor et esse excepteur
+          consequat consectetur.
         </Text>
+        <TouchableOpacity
+          style={styles1.buttonStyle}
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate('PossibleCauses')}>
+          <Text style={styles1.buttonTextStyle}>Meal Plan</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles1.buttonStyle}
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate('PossibleCauses')}>
+          <Text style={styles1.buttonTextStyle}>workout Plan</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -74,7 +93,8 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   rowFlex1: {
-    height: 120,
+    backgroundColor: COLORS.primary,
+    height: 60,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -84,7 +104,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerText: {
-    color: COLORS.black,
+    color: COLORS.white,
     fontSize: 15,
     width: SIZES.width * 0.5,
     textAlign: 'center',

@@ -19,7 +19,7 @@ import Description from '../components/Description';
 import Discount from '../components/Discount';
 
 import { addItemToCart as addItemToCartActionCreator } from '../redux/cartItemsSlice';
-import { COLORS, icons, SIZES } from '../constants';
+import { COLORS, images, icons, SIZES } from '../constants';
 import styles from '../constants/styling';
 import { authenticateProduct } from '../api/getProductAPI';
 import BASE_URL from '../shared/configs';
@@ -106,7 +106,13 @@ export default function PossibleCauses({ navigation, route }) {
           }}
         />
       </TouchableOpacity>
-      <Text style={styles.headerText}>PeoPulz</Text>
+      <Image
+        source={images.logo}
+        style={{
+          width: 90,
+          height: 50,
+        }}
+      />
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Image
           // source={icons.close}
