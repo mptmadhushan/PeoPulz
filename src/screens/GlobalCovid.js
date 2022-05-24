@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import Toast from 'react-native-simple-toast';
 
@@ -12,7 +12,7 @@ import { SIZES } from '../constants';
 import styles from '../constants/styling';
 import { checkout } from '../api/checkoutAPI';
 
-function MyBag({ navigation }) {
+function GlobalCovid({ navigation }) {
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cartItems.value);
   const userAuth = useSelector(state => state.auth.token);
@@ -65,37 +65,56 @@ function MyBag({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.rowFlex1}>
-        <Text style={styles.headerText}>Build your dream house Details</Text>
+        <Text style={styles.headerText}>Global Covid Update</Text>
       </View>
-      <View style={styles.rowFlex21}>
-        <View style={{ marginLeft: 20 }}>
-          <ItemDetais msg={'Perches : 10'} />
-          <ItemDetais msg={'Hectors : 10'} />
-          <ItemDetais msg={'Length : 10'} />
-          <ItemDetais msg={'Width : 10'} />
-          <ItemDetais msg={'Area : 10'} />
+      <View>
+        <View style={styles.rowFlex2}>
+          <ItemDetais msg={'Country'} />
+          <ItemDetais msg={'New'} />
+          <ItemDetais msg={'Total'} />
         </View>
-        <View style={{ marginLeft: 20 }}>
-          <ItemDetais msg={'Room Count : 10'} />
-          <ItemDetais msg={'Washroom Count : 10'} />
-          <ItemDetais msg={'Washroom Count : 10'} />
-          <ItemDetais msg={'Floors Count : 10'} />
+        <View style={styles.rowFlex2}>
+          <ItemDetais msg={'Europe'} />
+          <ItemDetais msg={'05'} />
+          <ItemDetais msg={'25'} />
+        </View>
+        <View style={styles.rowFlex2}>
+          <ItemDetais msg={'Africa'} />
+          <ItemDetais msg={'05'} />
+          <ItemDetais msg={'25'} />
+        </View>
+        <View style={styles.rowFlex2}>
+          <ItemDetais msg={'Asia'} />
+          <ItemDetais msg={'05'} />
+          <ItemDetais msg={'25'} />
         </View>
       </View>
 
       <View style={styles.rowFlex1}>
-        <Text style={styles.headerText}>Finishing Details</Text>
+        <Text style={styles.headerText}>Covid Notifier</Text>
       </View>
-      <View style={{ marginLeft: 20 }}>
-        <ItemDetais msg={'Ceiling Type : Hip Roof'} />
-        <ItemDetais msg={'Stone Type :  Hip Roof'} />
-        {/* </View>
-      <View style={styles.rowFlex2}> */}
-        <ItemDetais msg={'Roof Type :  Hip Roof'} />
-        <ItemDetais msg={'Finishing Roof Type :  Hip Roof'} />
+      <View style={styles.centerFlex}>
+        <TouchableOpacity style={styles.buttonStyleCovi} activeOpacity={0.5}>
+          <Text style={styles.buttonTextStyle}>
+            What do you do if your exposed
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyleCovi} activeOpacity={0.5}>
+          <Text style={styles.buttonTextStyle}>How it works</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.buttonStyleCovi} activeOpacity={0.5}>
+          <Text style={styles.buttonTextStyle}>Help</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.buttonStyleCovi}
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate('Privacy')}>
+          <Text style={styles.buttonTextStyle}>Privacy</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-export default MyBag;
+export default GlobalCovid;

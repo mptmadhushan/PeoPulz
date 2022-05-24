@@ -16,10 +16,12 @@ import ScanFail from '../screens/ScanFail';
 import MyItems from '../screens/MyItems';
 import MyDetails from '../screens/MyDetails';
 import Contact from '../screens/Contact';
+import GlobalCovid from '../screens/GlobalCovid';
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 
 export const ScreenNames = {
   Estimate: 'Estimate',
+  GlobalCovid: 'GlobalCovid',
   Contact: 'Contact',
   Login: 'Login',
   OnBoarding: 'OnBoarding',
@@ -33,7 +35,6 @@ export const ScreenNames = {
   RowMaterial: 'RowMaterial',
   CustomerReq: 'CustomerReq',
   Items: 'Items',
-  ItemsScreen: 'ItemsScreen',
   Location: 'Location',
   Profile: 'Profile',
 };
@@ -54,7 +55,6 @@ export default function MainStackNavigator() {
       ) : ( */}
       {/* <> */}
       <Screen name={ScreenNames.Login} component={LoginScreen} />
-
       <Screen
         name={ScreenNames.Home}
         component={BottomNavigator}
@@ -63,6 +63,11 @@ export default function MainStackNavigator() {
       <Screen
         name={ScreenNames.OnBoarding}
         component={OnBoarding}
+        options={{ headerShown: false }}
+      />
+      <Screen
+        name={ScreenNames.GlobalCovid}
+        component={GlobalCovid}
         options={{ headerShown: false }}
       />
       <Screen

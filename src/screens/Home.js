@@ -60,6 +60,12 @@ export default function Home({ navigation }) {
         onPress={() => navigation.navigate('Register')}>
         <Text style={styles.buttonTextStyle}>Submit your detail</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.buttonStyle}
+        activeOpacity={0.5}
+        onPress={() => navigation.navigate('Register')}>
+        <Text style={styles.buttonTextStyle}>What to do next</Text>
+      </TouchableOpacity>
     </View>
   );
   const menu = (
@@ -67,9 +73,8 @@ export default function Home({ navigation }) {
       <TouchableOpacity
         style={styles.buttonStyle}
         activeOpacity={0.5}
-        // onPress={() => onPressLogin()}
-      >
-        <Text style={styles.buttonTextStyle}>Menu</Text>
+        onPress={() => navigation.navigate('GlobalCovid')}>
+        <Text style={styles.buttonTextStyle}>Global Covid Update</Text>
       </TouchableOpacity>
     </View>
   );
@@ -86,7 +91,16 @@ export default function Home({ navigation }) {
           }}
         />
         <Text style={styles.buttonTextStyleReg}>Covid Notifier Is Active</Text>
-        <Text style={styles.headerText}>Full Cost : $1290</Text>
+        <Text style={{ textAlign: 'center' }}>
+          Nulla dolor ad minim do cupidatat aute excepteur et labore deserunt
+          laborum et aliquip. Veniam do amet nisi mollit quis consequat ipsum
+          mollit dolore dolor nulla. Id enim cillum nulla cillum officia
+          cupidatat occaecat tempor labore consectetur eu. Consequat eiusmod
+          minim laboris aliqua et aliquip labore ad. Qui esse exercitation est
+          eu enim officia elit cupidatat laborum excepteur sint. Dolor mollit ea
+          ut exercitation ad proident labore aliquip aliqua aliqua amet ipsum
+          pariatur non.
+        </Text>
 
         {menu}
       </View>

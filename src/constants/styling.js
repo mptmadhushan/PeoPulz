@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     alignContent: 'flex-start',
   },
+  rowFlex2: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
   emptyCartMessage: {
     color: COLORS.third,
     fontSize: 18,
@@ -45,7 +51,17 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     marginTop: 15,
   },
-  rowFlex2: {
+  buttonStyleCovi: {
+    backgroundColor: COLORS.black,
+    color: COLORS.white,
+    height: 55,
+    alignItems: 'center',
+    borderRadius: 30,
+    padding: 3,
+    minWidth: SIZES.width * 0.9,
+    marginTop: 15,
+  },
+  rowFlex22: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',

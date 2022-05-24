@@ -9,7 +9,7 @@ function ShoppingCartIcon(props) {
   const cartItems = useSelector(state => state);
   return (
     <TouchableOpacity
-      // onPress={() => navigation.navigate('ItemsScreen')}
+      // onPress={() => navigation.navigate('GlobalCovid')}
       style={styles.button}>
       <View style={styles.itemCountContainer}>
         <Text style={styles.itemCountText}>{cartItems.length}</Text>

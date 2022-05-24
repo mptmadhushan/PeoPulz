@@ -10,7 +10,7 @@ import { isIphoneX } from 'react-native-iphone-x-helper';
 import { useSelector } from 'react-redux';
 
 import Home from '../../screens/Home';
-import ItemsScreen from '../../screens/MyBag';
+import GlobalCovid from '../../screens/GlobalCovid';
 import Profile from '../../screens/Profile';
 import Location from '../../screens/Location';
 import Estimate from '../../screens/Estimate';
@@ -49,9 +49,9 @@ const Tabs = () => {
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
       />
-      <Screen
-        name={ScreenNames.ItemsScreen}
-        component={ItemsScreen}
+      {/* <Screen
+        name={ScreenNames.GlobalCovid}
+        component={GlobalCovid}
         options={{
           tabBarIcon: ({ focused }) => (
             <View>
@@ -77,8 +77,8 @@ const Tabs = () => {
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
-      />
-      <Screen
+      /> */}
+      {/* <Screen
         name={ScreenNames.Location}
         component={Location}
         options={{
@@ -87,8 +87,8 @@ const Tabs = () => {
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
-      />
-      <Screen
+      /> */}
+      {/* <Screen
         name={ScreenNames.Estimate}
         component={Estimate}
         options={{
@@ -97,7 +97,7 @@ const Tabs = () => {
           ),
           tabBarButton: props => <TabBarCustomButton {...props} />,
         }}
-      />
+      /> */}
       <Screen
         name={ScreenNames.Profile}
         component={Profile}
