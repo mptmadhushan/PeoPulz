@@ -13,7 +13,7 @@ import Symptoms from '../screens/Symptoms';
 import ItemDetails from '../screens/ItemDetails';
 import ContactUs from '../screens/ContactUs';
 import ScanFail from '../screens/ScanFail';
-import MyItems from '../screens/MyItems';
+// import MyItems from '../screens/MyItems';
 import MyDetails from '../screens/MyDetails';
 import Contact from '../screens/Contact';
 import GlobalCovid from '../screens/GlobalCovid';
@@ -31,7 +31,7 @@ export const ScreenNames = {
   Register: 'Register',
   Home: 'Home',
   Diabetes: 'Diabetes',
-  MyItems: 'MyItems',
+  // MyItems: 'MyItems',
   MyDetails: 'MyDetails',
   ItemDetails: 'ItemDetails',
   RelatedFactor: 'RelatedFactor',
@@ -87,11 +87,11 @@ export default function MainStackNavigator() {
         component={GlobalCovid}
         options={{ headerShown: false }}
       />
-      <Screen
+      {/* <Screen
         name={ScreenNames.MyItems}
         component={MyItems}
         options={{ headerShown: false }}
-      />
+      /> */}
       <Screen
         name={ScreenNames.MyDetails}
         component={MyDetails}

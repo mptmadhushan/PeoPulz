@@ -99,7 +99,6 @@ export default function Diabetes({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -112,7 +111,6 @@ export default function Diabetes({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -126,7 +124,6 @@ export default function Diabetes({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -140,7 +137,6 @@ export default function Diabetes({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -158,7 +154,6 @@ export default function Diabetes({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>
@@ -172,7 +167,6 @@ export default function Diabetes({ navigation }) {
             keyboardType="default"
             onSubmitEditing={Keyboard.dismiss}
             blurOnSubmit={false}
-            secureTextEntry={true}
             returnKeyType="next"
           />
         </View>

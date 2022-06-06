@@ -24,7 +24,7 @@ import { storeUserToken, getUserToken } from '../shared/asyncStorage';
 const LoginScreen = ({ navigation }) => {
   const dispatch = useDispatch();
 
-  const [userEmail, setUserEmail] = useState('');
+  const [userEmail, setUserEmail] = useState('git ');
   const [userPassword, setUserPassword] = useState('');
 
   const animationLogoScale = useRef(new Animated.Value(0)).current;
